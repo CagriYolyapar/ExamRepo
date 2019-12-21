@@ -1,0 +1,33 @@
+﻿@model Product
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        Ürün İsmi Giriniz
+
+    </div>
+    <div>
+        @Html.TextBoxFor(x=>x.ProductName)
+    </div>
+
+    <div>
+        Ürün fiyatı giriniz
+    </div>
+    <div>
+        @Html.TextBoxFor(x=>x.UnitPrice)
+    </div>
+    <div>
+        Ürün Stok giriniz
+    </div>
+    <div>
+        @Html.TextBoxFor(x=>x.UnitsInStock)
+    </div>
+
+    <div>
+        <button>Ekle </button>
+    </div>
+}
+

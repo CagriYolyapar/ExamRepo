@@ -13,5 +13,10 @@ namespace MVCAuthenticationTekrar.Models.Entities
 
         //Relational Properties
 
+        public virtual List<Product> Products { get; set; }
+
+
+
+
     }
 }
