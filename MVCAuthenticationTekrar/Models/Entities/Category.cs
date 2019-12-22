@@ -12,6 +12,6 @@ namespace MVCAuthenticationTekrar.Models.Entities
         public string Description { get; set; }
 
         //Relational Properties
-
+        public virtual List<Product> Products { get; set; }
     }
 }

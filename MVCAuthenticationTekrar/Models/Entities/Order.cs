@@ -12,5 +12,8 @@ namespace MVCAuthenticationTekrar.Models.Entities
         public string InvoiceAddress { get; set; }
 
         //Relational Properties
+
+        public virtual AppUser AppUser { get; set; }
+        public virtual List<OrderDetail> OrderDetails { get; set; }
     }
 }

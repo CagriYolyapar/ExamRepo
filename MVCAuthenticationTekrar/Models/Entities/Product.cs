@@ -13,6 +13,13 @@ namespace MVCAuthenticationTekrar.Models.Entities
 
         public short UnitsInStock { get; set; }
 
+        public int CategoryID { get; set; }
+
         //Relational Properties
+
+        public virtual Category Category { get; set; }
+
+        public virtual List<OrderDetail> OrderDetails { get; set; }
+
     }
 }

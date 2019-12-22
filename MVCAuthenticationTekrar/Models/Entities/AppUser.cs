@@ -15,7 +15,9 @@ namespace MVCAuthenticationTekrar.Models.Entities
         public UserRole Role { get; set; }
         //Relational Properties
 
+        public virtual List<Order> Orders { get; set; }
 
+        public virtual AppUserProfile Profile { get; set; }
 
     }
 }
