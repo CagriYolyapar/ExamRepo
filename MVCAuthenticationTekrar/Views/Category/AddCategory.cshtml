@@ -1,0 +1,33 @@
+﻿@model Category
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+
+
+<div class="jumbotron">
+    Kategori Listesi. Yeni kategori eklemek icin @Html.ActionLink("Tıklayınız", "AddCategory")
+</div>
+@using (Html.BeginForm())
+{
+    <div class="panel panel-default">
+        <div class="panel panel-body">
+            <div>
+                Kategori Ismi giriniz
+            </div>
+            <div>
+                @Html.TextBoxFor(x => x.CategoryName)
+            </div>
+            <div>
+                Kategori Acıklaması giriniz
+            </div>
+            <div>
+                @Html.TextBoxFor(x => x.Description)
+            </div>
+            <div>
+                <button class="btn btn-primary">Kategori Ekle</button>
+            </div>
+        </div>
+    </div>
+}
+

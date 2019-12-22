@@ -23,6 +23,8 @@ else
             <th>Ürün İsmi</th>
             <th>Ürün Stok</th>
             <th>Ürün Fiyatı</th>
+            <th>Ürün Kategorisi</th>
+            <th colspan="2" style="text-align:center">İslemler</th>
         </tr>
         @foreach (Product item in Model)
         {
@@ -30,6 +32,9 @@ else
                 <td>@item.ProductName</td>
                 <td>@item.UnitsInStock</td>
                 <td>@item.UnitPrice</td>
+                <td>@item.Category.CategoryName</td>
+                <td>@Html.ActionLink("Ürün GÜncelle","UpdateProduct",new { id=item.ID},new {@class="btn btn-warning" })</td>
+                <td>@Html.ActionLink("Ürün Sil","DeleteProduct",new { id=item.ID},new { @class="btn btn-danger"})</td>
             </tr>
         }
     </table>

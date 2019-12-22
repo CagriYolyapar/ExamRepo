@@ -27,6 +27,7 @@ namespace MVCAuthenticationTekrar.Controllers
 
         public ActionResult AddProduct()
         {
+            ViewBag.KategoriListesi = db.Categories.ToList(); //Kategori listemizi ViewBag'de saklıyoruz..
             return View();
         }
 
@@ -35,6 +36,31 @@ namespace MVCAuthenticationTekrar.Controllers
         {
             db.Products.Add(item);
             db.SaveChanges();
+            return RedirectToAction("ProductList");
+        }
+
+
+        public ActionResult DeleteProduct(int id)
+        {
+            db.Products.Remove(db.Products.Find(id));
+            db.SaveChanges();
+            return RedirectToAction("ProductList");
+        }
+
+        public ActionResult UpdateProduct(int id)
+        {
+            ViewBag.KategoriListesi = db.Categories.ToList();
+            return View(db.Products.Find(id));
+            
+        }
+
+        [HttpPost]
+        public ActionResult UpdateProduct(Product item)
+        {
+            Product toBeUpdated = db.Products.Find(item.ID);
+            db.Entry(toBeUpdated).CurrentValues.SetValues(item);
+            db.SaveChanges();
+
             return RedirectToAction("ProductList");
         }
     }

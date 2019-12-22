@@ -1,0 +1,41 @@
+﻿@model Product
+@{
+    ViewBag.Title = "UpdateProduct";
+}
+
+<h2>UpdateProduct</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x=>x.ID)
+    <div>
+        Ürün İsmi Giriniz
+
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.ProductName)
+    </div>
+
+    <div>
+        Ürün fiyatı giriniz
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.UnitPrice)
+    </div>
+    <div>
+        Ürün Stok giriniz
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.UnitsInStock)
+    </div>
+    <div>
+        Kategori Seciniz
+    </div>
+    <div>
+        @Html.DropDownListFor(x => x.CategoryID, new SelectList(ViewBag.KategoriListesi, "ID", "CategoryName"), "Lutfen Seciniz")
+    </div>
+
+    <div>
+        <button class="btn btn-primary"> Ürün Güncelle </button>
+    </div>
+}

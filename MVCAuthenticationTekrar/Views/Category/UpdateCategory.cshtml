@@ -1,0 +1,30 @@
+﻿@model Category
+@{
+    ViewBag.Title = "UpdateCategory";
+}
+
+<h2>UpdateCategory</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x=>x.ID)
+    <div class="panel panel-default">
+        <div class="panel panel-body">
+            <div>
+                Kategori Ismi giriniz
+            </div>
+            <div>
+                @Html.TextBoxFor(x => x.CategoryName)
+            </div>
+            <div>
+                Kategori Acıklaması giriniz
+            </div>
+            <div>
+                @Html.TextBoxFor(x => x.Description)
+            </div>
+            <div>
+                <button class="btn btn-primary">Kategori Güncelle</button>
+            </div>
+        </div>
+    </div>
+}
