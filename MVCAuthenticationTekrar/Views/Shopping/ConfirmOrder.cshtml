@@ -1,0 +1,24 @@
+﻿@model Order
+@{
+    ViewBag.Title = "ConfirmOrder";
+}
+
+<h2>ConfirmOrder</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        Siparis Adresi
+    </div>
+    <div>
+        @Html.TextBoxFor(x=>x.ShipAddress)
+    </div>
+    <div>
+        Fatura Adresi
+    </div>
+    <div>
+        @Html.TextBoxFor(x=>x.InvoiceAddress)
+    </div>
+    <div>
+        <button class="btn btn-primary">Onayla</button>
+    </div>
+}

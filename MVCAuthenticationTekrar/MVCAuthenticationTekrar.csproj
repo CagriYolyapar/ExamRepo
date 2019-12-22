@@ -150,8 +150,8 @@
     <Compile Include="Models\Entities\AppUser.cs" />
     <Compile Include="Models\Entities\AppUserProfile.cs" />
     <Compile Include="Models\Entities\BaseEntity.cs" />
-    <Compile Include="Models\Entities\Cart.cs" />
-    <Compile Include="Models\Entities\CartItem.cs" />
+    <Compile Include="Models\CustomTools\Cart.cs" />
+    <Compile Include="Models\CustomTools\CartItem.cs" />
     <Compile Include="Models\Entities\Category.cs" />
     <Compile Include="Models\Entities\Order.cs" />
     <Compile Include="Models\Entities\OrderDetail.cs" />
@@ -176,6 +176,9 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Shopping\ShoppingList.cshtml" />
+    <Content Include="Views\Shopping\CartPage.cshtml" />
+    <Content Include="Views\Shopping\ConfirmOrder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -185,7 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Shopping\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

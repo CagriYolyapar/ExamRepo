@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MVCAuthenticationTekrar.Models.Entities
+namespace MVCAuthenticationTekrar.Models.CustomTools
 {
     public class Cart
     {
@@ -20,6 +20,17 @@ namespace MVCAuthenticationTekrar.Models.Entities
                 return _sepetim.Values.ToList();
             }
         }
+        
+        public void SepeteEkle(CartItem item)
+        {
+            if (_sepetim.ContainsKey(item.ID))
+            {
+                _sepetim[item.ID].Amount += 1;
+                return;
+            }
+            _sepetim.Add(item.ID, item);
+        }
+
 
         public void SepettenSil(int id)
         {
