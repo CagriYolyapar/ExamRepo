@@ -14,5 +14,7 @@ namespace MVCAuthenticationTekrar.Models.Entities
         //Relational Properties
 
         public virtual AppUser AppUser { get; set; }
+
+
     }
 }

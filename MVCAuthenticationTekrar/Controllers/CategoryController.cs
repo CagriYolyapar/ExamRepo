@@ -1,4 +1,5 @@
-﻿using MVCAuthenticationTekrar.Models.Context;
+﻿using MVCAuthenticationTekrar.AuthenticationClasses;
+using MVCAuthenticationTekrar.Models.Context;
 using MVCAuthenticationTekrar.Models.Entities;
 using MVCAuthenticationTekrar.SingletonPattern;
 using System;
@@ -9,17 +10,14 @@ using System.Web.Mvc;
 
 namespace MVCAuthenticationTekrar.Controllers
 {
+    [AdminAuthentication]
     public class CategoryController : Controller
     {
-
         MyContext db;
-
         public CategoryController()
         {
             db = DBTool.DBInstance;
         }
-
-        // GET: Category
         public ActionResult CategoryList()
         {
             return View(db.Categories.ToList());
@@ -31,13 +29,13 @@ namespace MVCAuthenticationTekrar.Controllers
         }
 
         [HttpPost]
-
         public ActionResult AddCategory(Category item)
         {
             db.Categories.Add(item);
             db.SaveChanges();
             return RedirectToAction("CategoryList");
         }
+
 
         public ActionResult DeleteCategory(int id)
         {
@@ -52,7 +50,6 @@ namespace MVCAuthenticationTekrar.Controllers
         }
 
         [HttpPost]
-
         public ActionResult UpdateCategory(Category item)
         {
             Category toBeUpdated = db.Categories.Find(item.ID);
@@ -60,5 +57,11 @@ namespace MVCAuthenticationTekrar.Controllers
             db.SaveChanges();
             return RedirectToAction("CategoryList");
         }
+
+
+
+
+
+       
     }
 }

@@ -7,32 +7,30 @@
 {
     <div>
         Ürün İsmi Giriniz
+
     </div>
     <div>
-        @Html.TextBoxFor(x => x.ProductName)
+        @Html.TextBoxFor(x=>x.ProductName)
     </div>
 
     <div>
-        Ürün Fiyatını Giriniz
+        Ürün fiyatı giriniz
     </div>
     <div>
-        @Html.TextBoxFor(x => x.UnitPrice)
-    </div>
-
-    <div>
-        Ürün Stok Giriniz
+        @Html.TextBoxFor(x=>x.UnitPrice)
     </div>
     <div>
-        @Html.TextBoxFor(x => x.UnitsInStock)
-    </div>
-
-    <div>
-        Kategori Seçiniz
+        Ürün Stok giriniz
     </div>
     <div>
-        @Html.DropDownListFor(x=>x.CategoryID,new SelectList(ViewBag.KategoriListesi,"ID","CategoryName"),"Lütfen Seciniz")
+        @Html.TextBoxFor(x=>x.UnitsInStock)
     </div>
-
+    <div>
+        Kategori Seciniz
+    </div>
+    <div>
+        @Html.DropDownListFor(x=>x.CategoryID,new SelectList(ViewBag.KategoriListesi,"ID","CategoryName"),"Lutfen Seciniz")
+    </div>
 
     <div>
         <button class="btn btn-primary"> Ürün Ekle </button>

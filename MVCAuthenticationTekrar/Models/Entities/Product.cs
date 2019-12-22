@@ -15,6 +15,8 @@ namespace MVCAuthenticationTekrar.Models.Entities
 
         public int CategoryID { get; set; }
 
+
+
         //Relational Properties
 
         public virtual Category Category { get; set; }

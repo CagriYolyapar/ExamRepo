@@ -1,7 +1,6 @@
 ﻿using MVCAuthenticationTekrar.AuthenticationClasses;
 using MVCAuthenticationTekrar.Models.Context;
 using MVCAuthenticationTekrar.Models.Entities;
-using MVCAuthenticationTekrar.SingletonPattern;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +9,14 @@ using System.Web.Mvc;
 
 namespace MVCAuthenticationTekrar.Controllers
 {
-    [AdminAuth]
+    [AdminAuthentication]
     public class ProductController : Controller
     {
-
         MyContext db;
 
         public ProductController()
         {
-            db = DBTool.DBInstance;
+            db = new MyContext();
         }
         // GET: Product
         public ActionResult ProductList()
@@ -26,20 +24,21 @@ namespace MVCAuthenticationTekrar.Controllers
             return View(db.Products.ToList());
         }
 
+
         public ActionResult AddProduct()
         {
-            ViewBag.KategoriListesi = db.Categories.ToList();
+            ViewBag.KategoriListesi = db.Categories.ToList(); //Kategori listemizi ViewBag'de saklıyoruz..
             return View();
         }
 
         [HttpPost]
-
         public ActionResult AddProduct(Product item)
         {
             db.Products.Add(item);
             db.SaveChanges();
             return RedirectToAction("ProductList");
         }
+
 
         public ActionResult DeleteProduct(int id)
         {
@@ -50,12 +49,12 @@ namespace MVCAuthenticationTekrar.Controllers
 
         public ActionResult UpdateProduct(int id)
         {
+            ViewBag.KategoriListesi = db.Categories.ToList();
             return View(db.Products.Find(id));
-
+            
         }
 
         [HttpPost]
-
         public ActionResult UpdateProduct(Product item)
         {
             Product toBeUpdated = db.Products.Find(item.ID);

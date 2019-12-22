@@ -25,26 +25,26 @@ namespace MVCAuthenticationTekrar.Controllers
         }
 
         [HttpPost]
-
         public ActionResult Login(AppUser item)
         {
             AppUser girisYapan = db.AppUsers.FirstOrDefault(x => x.UserName == item.UserName && x.Password == item.Password);
 
 
-            if (girisYapan!=null&& girisYapan.Role == Models.Enums.UserRole.Admin)
+            if (girisYapan!=null && girisYapan.Role == Models.Enums.UserRole.Admin)
             {
                 Session["admin"] = girisYapan;
 
                 return RedirectToAction("ProductList", "Product");
             }
-            else if(girisYapan!=null &&girisYapan.Role == Models.Enums.UserRole.Member)
+            else if(girisYapan!=null && girisYapan.Role == Models.Enums.UserRole.Member)
             {
                 Session["member"] = girisYapan;
 
                 return RedirectToAction("ShoppingList", "Shopping");
             }
 
-            return RedirectToAction("Login", "Home");
+
+            return RedirectToAction("Login","Home");
         }
     }
 }

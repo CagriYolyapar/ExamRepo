@@ -7,23 +7,23 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(x=>x.ID) 
+    @Html.HiddenFor(x=>x.ID)
     <div class="panel panel-default">
         <div class="panel panel-body">
             <div>
-                Kategori Ismi Giriniz
+                Kategori Ismi giriniz
             </div>
             <div>
                 @Html.TextBoxFor(x => x.CategoryName)
             </div>
             <div>
-                Kategori Aciklamasi Giriniz
+                Kategori Acıklaması giriniz
             </div>
             <div>
                 @Html.TextBoxFor(x => x.Description)
             </div>
             <div>
-                <button class="btn btn-primary"> Kategori Güncelle</button>
+                <button class="btn btn-primary">Kategori Güncelle</button>
             </div>
         </div>
     </div>

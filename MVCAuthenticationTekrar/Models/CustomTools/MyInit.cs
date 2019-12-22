@@ -11,11 +11,12 @@ namespace MVCAuthenticationTekrar.Models.CustomTools
 {
     public class MyInit:CreateDatabaseIfNotExists<MyContext>
     {
-       
+      
+        
         protected override void Seed(MyContext context)
         {
             AppUser item = new AppUser();
-            item.UserName = "ecenaz123";
+            item.UserName = "cagri123";
             item.Password = "123";
             item.Role = Enums.UserRole.Admin;
 

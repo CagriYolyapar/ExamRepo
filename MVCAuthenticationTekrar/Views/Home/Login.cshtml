@@ -8,25 +8,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
-            {
-                <div>
-                     Kullanıcı Ismi
-                </div>
-                <div>
-                     @Html.TextBoxFor(x => x.UserName)
-                </div>
-                <div>
-                     Sifre
-                </div>
-                <div>
-                    @Html.TextBoxFor(x => x.Password)
+             @using (Html.BeginForm("Login","Home",FormMethod.Post))
+             {
+                 <div>
+                     Kullanıcı İsmi
                  </div>
                  <div>
-                     <button>Giris Yap</button>
-                </div>
-            }
+                     @Html.TextBoxFor(x=>x.UserName)
+                 </div>
+                 <div>
+                     Sifre
+                 </div>
+                 <div>
+                     @Html.TextBoxFor(x=>x.Password)
+                 </div>
+                 <div>
+                     <button>Giriş Yap</button>
+                 </div>
+             }
         </div>
     </div>
 </div>
-

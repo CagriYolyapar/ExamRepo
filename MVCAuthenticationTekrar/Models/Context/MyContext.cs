@@ -8,14 +8,14 @@ using System.Web;
 
 namespace MVCAuthenticationTekrar.Models.Context
 {
-    public class MyContext:DbContext
+    public class MyContext : DbContext
     {
         public MyContext():base("MyConnection")
         {
             Database.SetInitializer(new MyInit());
 
             
-           
+
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
