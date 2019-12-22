@@ -19,7 +19,9 @@ namespace MVCAuthenticationTekrar.Models.Entities
         public virtual List<Order> Orders { get; set; }
 
 
+        public virtual List<Order> Orders { get; set; }
 
+        public virtual AppUserProfile Profile { get; set; }
 
     }
 }
